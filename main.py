@@ -28,7 +28,7 @@ def wish():
     while True:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
-        if now=="09:33:10":
+        if now=="06:30:10":
             updater.bot.send_message(chat_id=-1001434326296,text="Good Morning Friends, ☀️ ")
             updater.bot.send_message(chat_id=-1001434326296,text=f"Have a {random.choice(stwish)} day!")
             time.sleep(5)
@@ -57,7 +57,6 @@ def main():
         "03-09-19":"Kabilan",
         "01-11-18":"Dickson",
         "01-11-09":"Renith",
-        "23-01-15":"test"
     }
     global updater
     updater = telegram.ext.Updater(token,use_context=True)
@@ -66,7 +65,7 @@ def main():
     disp.add_handler(telegram.ext.CommandHandler("list",list))
     threading.Thread(target=wish).start()
     updater.start_polling()
-    # updater.idle()
+    #updater.idle()
 
 if __name__=='__main__':
     main()

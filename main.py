@@ -7,6 +7,7 @@ import threading
 import time
 import datetime
 import random
+import os
 
 import telegram.ext
 from logging import basicConfig, getLogger, INFO
@@ -40,7 +41,7 @@ def wish():
 
 
 def main():
-    token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
+    key=os.getenv(token)
     today = datetime.datetime.today().strftime("%y-%m-%d")
     global BDICT,CDATE,CYEAR,stwish
     stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
@@ -59,7 +60,7 @@ def main():
         "01-11-09":"Renith",
     }
     global updater
-    updater = telegram.ext.Updater(token,use_context=True)
+    updater = telegram.ext.Updater(key,use_context=True)
     disp = updater.dispatcher
     disp.add_handler(telegram.ext.CommandHandler("start",start))
     disp.add_handler(telegram.ext.CommandHandler("list",list))

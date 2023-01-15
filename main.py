@@ -5,7 +5,8 @@ Developer: @smarthood
 
 import threading
 import time
-from datetime import date
+import datetime
+import random
 
 import telegram.ext
 
@@ -21,17 +22,24 @@ def list(update,context):
         update.message.reply_text(BDICT[_]+"-"+_)
 def wish():
     while True:
-        for _ in BDICT:
-            if CDATE==_[-5:]:
-                byear=int(CYEAR)-int(_[:2])+1
-                updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {byear}st Birthday to you, {BDICT[_]} ✨ ")
-        print(_)
-        time.sleep(86400)
+        current_time = datetime.datetime.now()
+        now = current_time.strftime("%H:%M:%S")
+        if now=="09:33:10":
+            updater.bot.send_message(chat_id=-1001434326296,text="Good Morning Friends, ☀️ ")
+            updater.bot.send_message(chat_id=-1001434326296,text=f"Have a {random.choice(stwish)} day!")
+            time.sleep(5)
+            for _ in BDICT:
+                if CDATE==_[-5:]:
+                    byear=int(CYEAR)-int(_[:2])+1
+                    updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {byear}st Birthday to you, {BDICT[_]} ✨ ")
+            
+
 
 def main():
     token="5921202727:AAE7wwK5ISKC5BTaIN1PjwzBUbTqfDcgekI"
-    today = date.today().strftime("%y-%m-%d")
-    global BDICT,CDATE,CYEAR
+    today = datetime.datetime.today().strftime("%y-%m-%d")
+    global BDICT,CDATE,CYEAR,stwish
+    stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
     CYEAR=today[:2]
     CDATE=today[-5:]
     BDICT={
@@ -44,7 +52,8 @@ def main():
         "04-04-14":"Greats",
         "03-09-19":"Kabilan",
         "01-11-18":"Dickson",
-        "01-11-09":"Renith"
+        "01-11-09":"Renith",
+        "23-01-15":"test"
     }
     global updater
     updater = telegram.ext.Updater(token,use_context=True)

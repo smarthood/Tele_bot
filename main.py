@@ -9,6 +9,10 @@ import datetime
 import random
 
 import telegram.ext
+from logging import basicConfig, getLogger, INFO
+
+basicConfig(level=INFO)
+log = getLogger()
 
 
 def start(update,context):
@@ -62,7 +66,7 @@ def main():
     disp.add_handler(telegram.ext.CommandHandler("list",list))
     threading.Thread(target=wish).start()
     updater.start_polling()
-    updater.idle()
+    # updater.idle()
 
 if __name__=='__main__':
     main()

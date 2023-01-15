@@ -40,7 +40,7 @@ def wish():
 
 
 def main():
-    token="5921202727:AAE7wwK5ISKC5BTaIN1PjwzBUbTqfDcgekI"
+    token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
     today = datetime.datetime.today().strftime("%y-%m-%d")
     global BDICT,CDATE,CYEAR,stwish
     stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]

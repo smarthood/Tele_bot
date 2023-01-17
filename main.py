@@ -25,7 +25,7 @@ def list(update,context):
     for _ in BDICT:
         update.message.reply_text(BDICT[_]+"-"+_)
 def wish():
-    while True:
+    try:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
         if now=="06:30:10":
@@ -39,6 +39,8 @@ def wish():
             for i in CDICT:
                 if CDATE==i[-5:]:
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
+    except:
+        print("error")
             
 token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
 today = datetime.datetime.today().strftime("%y-%m-%d")
@@ -78,4 +80,4 @@ disp.add_handler(telegram.ext.CommandHandler("start",start))
 disp.add_handler(telegram.ext.CommandHandler("list",list))
 threading.Thread(target=wish).start()
 updater.start_polling()
-#updater.idle()
+updater.idle()

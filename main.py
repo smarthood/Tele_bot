@@ -61,17 +61,17 @@ BDICT={
         "01-11-09":"Renith",
     }
 CDICT={
-    "23-01-01":"New Year",
-    "23-12-25":"christmas",
-    "23-01-15":"pongal",
-    "23-02-14":"Valentine's Day",
-    "23-03-08":"Holi",
-    "23-04-09":"Easter",
-    "23-11-10":"Diwali",
-    "23-01-26":"Independence Day",
-    "23-08-15":"Republic Day",
-    "23-10-02":"Gandhi jeyanthi",
-    "23-04-22":"Ramzan"
+    "23-01-01":"New Year 🎆",
+    "23-12-25":"christmas 🎄",
+    "23-01-15":"pongal 🌤️",
+    "23-02-14":"Valentine's Day 💕",
+    "23-03-08":"Holi 🎨",
+    "23-04-09":"Easter 🕯️",
+    "23-11-10":"Diwali 🪔",
+    "23-01-26":"Independence Day🇮🇳",
+    "23-08-15":"Republic Day 🇮🇳",
+    "23-10-02":"Gandhi jeyanthi 🕊️",
+    "23-04-22":"Ramzan 🕌"
 }
 global updater
 updater = telegram.ext.Updater(token,use_context=True)

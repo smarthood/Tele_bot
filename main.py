@@ -8,12 +8,12 @@ import time
 import datetime
 import random
 
+
 import telegram.ext
 from logging import basicConfig, getLogger, INFO
 
 basicConfig(level=INFO)
 log = getLogger()
-
 
 def start(update,context):
     update.message.reply_text("Hello Friends!")
@@ -37,16 +37,13 @@ def wish():
                     byear=int(CYEAR)-int(_[:2])+1
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {byear}st Birthday to you, {BDICT[_]} ✨ ")
             
-
-
-def main():
-    token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
-    today = datetime.datetime.today().strftime("%y-%m-%d")
-    global BDICT,CDATE,CYEAR,stwish
-    stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
-    CYEAR=today[:2]
-    CDATE=today[-5:]
-    BDICT={
+token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
+today = datetime.datetime.today().strftime("%y-%m-%d")
+global BDICT,CDATE,CYEAR,stwish
+stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
+CYEAR=today[:2]
+CDATE=today[-5:]
+BDICT={
         "02-07-26":"Bright",
         "03-11-09":"Newton",
         "02-05-02":"Shan",
@@ -58,14 +55,11 @@ def main():
         "01-11-18":"Dickson",
         "01-11-09":"Renith",
     }
-    global updater
-    updater = telegram.ext.Updater(token,use_context=True)
-    disp = updater.dispatcher
-    disp.add_handler(telegram.ext.CommandHandler("start",start))
-    disp.add_handler(telegram.ext.CommandHandler("list",list))
-    threading.Thread(target=wish).start()
-    updater.start_polling()
-    #updater.idle()
-
-if __name__=='__main__':
-    main()
+global updater
+updater = telegram.ext.Updater(token,use_context=True)
+disp = updater.dispatcher
+disp.add_handler(telegram.ext.CommandHandler("start",start))
+disp.add_handler(telegram.ext.CommandHandler("list",list))
+threading.Thread(target=wish).start()
+updater.start_polling()
+#updater.idle()

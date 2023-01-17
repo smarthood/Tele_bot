@@ -29,17 +29,20 @@ def wish():
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
         if now=="06:30:10":
-            updater.bot.send_message(chat_id=-1001434326296,text="Good Morning Friends, ☀️ ")
-            updater.bot.send_message(chat_id=-1001434326296,text=f"Have a {random.choice(stwish)} day!")
+            updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
+            updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             time.sleep(5)
             for _ in BDICT:
                 if CDATE==_[-5:]:
                     byear=int(CYEAR)-int(_[:2])+1
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {byear}st Birthday to you, {BDICT[_]} ✨ ")
+            for i in CDICT:
+                if CDATE==i[-5:]:
+                    updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
             
 token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
 today = datetime.datetime.today().strftime("%y-%m-%d")
-global BDICT,CDATE,CYEAR,stwish
+global BDICT,CDATE,CYEAR,stwish,CDICT
 stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
 CYEAR=today[:2]
 CDATE=today[-5:]
@@ -55,6 +58,19 @@ BDICT={
         "01-11-18":"Dickson",
         "01-11-09":"Renith",
     }
+CDICT={
+    "23-01-01":"New Year",
+    "23-12-25":"christmas",
+    "23-01-15":"pongal",
+    "23-02-14":"Valentine's Day",
+    "23-03-08":"Holi",
+    "23-04-09":"Easter",
+    "23-11-10":"Diwali",
+    "23-01-26":"Independence Day",
+    "23-08-15":"Republic Day",
+    "23-10-02":"Gandhi jeyanthi",
+    "23-04-22":"Ramzan"
+}
 global updater
 updater = telegram.ext.Updater(token,use_context=True)
 disp = updater.dispatcher

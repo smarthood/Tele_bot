@@ -29,7 +29,6 @@ def wish():
     while True:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
-        updater.bot.send_message(chat_id=1313787079,text=f"{now}")
         print(now)
         if now=="06:30:10":
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")

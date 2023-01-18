@@ -29,7 +29,7 @@ def wish():
     while True:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
-        if now=="01:00:10" or now=="01:00:11":
+        if now in ("01:00:10" ,"01:00:11"):
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             for _ in BDICT:

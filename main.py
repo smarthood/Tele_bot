@@ -15,6 +15,7 @@ from logging import basicConfig, getLogger, INFO
 basicConfig(level=INFO)
 log = getLogger()
 
+
 def start(update,context):
     update.message.reply_text("Hello Friends!")
     update.message.reply_text("Type /list to see all Birthday 🎉")
@@ -25,13 +26,14 @@ def list(update,context):
     for _ in BDICT:
         update.message.reply_text(BDICT[_]+"-"+_)
 def wish():
-    try:
+    while True:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
+        updater.bot.send_message(chat_id=1313787079,text=f"{now}")
+        print(now)
         if now=="06:30:10":
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
-            time.sleep(5)
             for _ in BDICT:
                 if CDATE==_[-5:]:
                     byear=int(CYEAR)-int(_[:2])+1
@@ -39,16 +41,15 @@ def wish():
             for i in CDICT:
                 if CDATE==i[-5:]:
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
-    except:
-        print("error")
             
-token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
-today = datetime.datetime.today().strftime("%y-%m-%d")
-global BDICT,CDATE,CYEAR,stwish,CDICT
-stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
-CYEAR=today[:2]
-CDATE=today[-5:]
-BDICT={
+def main():
+    token="1408040342:AAFRCnGMs5an0gkGYDZhTQ36YjII9jrFOt8"
+    today = datetime.datetime.today().strftime("%y-%m-%d")
+    global BDICT,CDATE,CYEAR,stwish,CDICT
+    stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
+    CYEAR=today[:2]
+    CDATE=today[-5:]
+    BDICT={
         "02-07-26":"Bright",
         "03-11-09":"Newton",
         "02-05-02":"Shan",
@@ -59,8 +60,8 @@ BDICT={
         "03-09-19":"Kabilan",
         "01-11-18":"Dickson",
         "01-11-09":"Renith",
-    }
-CDICT={
+        }
+    CDICT={
     "23-01-01":"New Year 🎆",
     "23-12-25":"christmas 🎄",
     "23-01-15":"pongal 🌤️",
@@ -71,13 +72,16 @@ CDICT={
     "23-01-26":"Independence Day🇮🇳",
     "23-08-15":"Republic Day 🇮🇳",
     "23-10-02":"Gandhi jeyanthi 🕊️",
-    "23-04-22":"Ramzan 🕌"
-}
-global updater
-updater = telegram.ext.Updater(token,use_context=True)
-disp = updater.dispatcher
-disp.add_handler(telegram.ext.CommandHandler("start",start))
-disp.add_handler(telegram.ext.CommandHandler("list",list))
-threading.Thread(target=wish).start()
-updater.start_polling()
-updater.idle()
+    "23-04-22":"Ramzan 🕌",
+    "23-01-17":"Test"
+    }
+    global updater
+    updater = telegram.ext.Updater(token,use_context=True)
+    disp = updater.dispatcher
+    disp.add_handler(telegram.ext.CommandHandler("start",start))
+    disp.add_handler(telegram.ext.CommandHandler("list",list))
+    threading.Thread(target=wish).start()
+    updater.start_polling()
+    updater.idle()
+if __name__ == '__main__':
+    main()

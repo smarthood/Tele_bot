@@ -25,8 +25,10 @@ def start(update,context):
 def list(update,context):
     for _ in BDICT:
         update.message.reply_text(BDICT[_]+"-"+_)
-def Time(update,context):
-    update.message.reply_text(datetime.datetime.now().strftime("%H:%M:%S"))
+def ctime(update,context):
+    current_time = datetime.datetime.now()
+    now=current_time.strftime("%H:%M:%S")
+    update.message.reply_text(now)
 
 def wish():
     while True:
@@ -81,7 +83,7 @@ def main():
     disp = updater.dispatcher
     disp.add_handler(telegram.ext.CommandHandler("start",start))
     disp.add_handler(telegram.ext.CommandHandler("list",list))
-    disp.add_handler(telegram.ext.CommandHandler("time",Time))
+    disp.add_handler(telegram.ext.CommandHandler("ctime",ctime))
     threading.Thread(target=wish).start()
     updater.start_polling()
     updater.idle()

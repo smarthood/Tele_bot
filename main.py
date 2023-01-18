@@ -77,7 +77,6 @@ def main():
     "23-08-15":"Republic Day 🇮🇳",
     "23-10-02":"Gandhi jeyanthi 🕊️",
     "23-04-22":"Ramzan 🕌",
-    "23-01-17":"Test"
     }
     global updater
     updater = telegram.ext.Updater(token,use_context=True)

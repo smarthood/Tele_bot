@@ -45,6 +45,7 @@ def wish():
             for i in CDICT:
                 if CDATE==i[-5:]:
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
+        time.sleep(1)
             
 def main():
     token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"

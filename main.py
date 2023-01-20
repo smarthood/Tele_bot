@@ -26,12 +26,12 @@ def list(update,context):
     for _ in BDICT:
         update.message.reply_text(BDICT[_]+"-"+_)
 
-def ctime(update,context):
+def cdate(update,context):
     current_time = datetime.datetime.today()
     now=current_time.strftime("%y-%m-%d")
     update.message.reply_text("current date is-"+now)
 
-def cdate(update,context):
+def ctime(update,context):
     current_time = datetime.datetime.now()
     now=current_time.strftime("%H:%M:%S")
     update.message.reply_text("current time is-"+now)

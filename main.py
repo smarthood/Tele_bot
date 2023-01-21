@@ -41,6 +41,7 @@ def wish():
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
         if now == "01:00:10":
+            time.sleep(100)
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             for _ in BDICT:
@@ -50,7 +51,6 @@ def wish():
             for i in CDICT:
                 if CDATE==i[-5:]:
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
-        time.sleep(10)
             
 def main():
     token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"

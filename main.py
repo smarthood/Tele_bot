@@ -53,7 +53,7 @@ def wish():
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
             
 def main():
-    token="5921202727:AAE4ggw1IaX9MP2eNhYcEmcD7YI2D7bVywo"
+    token="5921202727:AAF_c7OE8W_TjJf1r_srYAn0au_Dz8CJrB0"
     today = datetime.datetime.today().strftime("%y-%m-%d")
     global BDICT,CDATE,CYEAR,stwish,CDICT
     stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]

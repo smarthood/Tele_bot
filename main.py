@@ -43,7 +43,7 @@ def wish():
         today = datetime.datetime.today().strftime("%y-%m-%d")
         CYEAR=today[:2]
         CDATE=today[-5:]
-        if now == "04:30:10":
+        if now == "01:00:10":
             time.sleep(10)
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")

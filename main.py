@@ -40,6 +40,9 @@ def wish():
     while True:
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
+        today = datetime.datetime.today().strftime("%y-%m-%d")
+        CYEAR=today[:2]
+        CDATE=today[-5:]
         if now == "01:00:10":
             time.sleep(10)
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
@@ -54,11 +57,8 @@ def wish():
             
 def main():
     token="5921202727:AAF_c7OE8W_TjJf1r_srYAn0au_Dz8CJrB0"
-    today = datetime.datetime.today().strftime("%y-%m-%d")
-    global BDICT,CDATE,CYEAR,stwish,CDICT
+    global BDICT,stwish,CDICT
     stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
-    CYEAR=today[:2]
-    CDATE=today[-5:]
     BDICT={
         "02-07-26":"Bright",
         "03-11-09":"Newton",

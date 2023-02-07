@@ -7,6 +7,7 @@ import threading
 import time
 import datetime
 import random
+import os
 
 
 import telegram.ext
@@ -56,7 +57,7 @@ def wish():
                     updater.bot.send_message(chat_id=-1001434326296,text=f"Happy {CDICT[i]}  ")
             
 def main():
-    token="5921202727:AAF_c7OE8W_TjJf1r_srYAn0au_Dz8CJrB0"
+    token =os.environ.get("Token")
     global BDICT,stwish,CDICT
     stwish=["wonderful","surprise","fantastic","marvellous","good","hopeful","great","nice","special"]
     BDICT={

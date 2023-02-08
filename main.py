@@ -8,11 +8,12 @@ import time
 import datetime
 import random
 import os
-
+from dotenv import load_dotenv
 
 import telegram.ext
 from logging import basicConfig, getLogger, INFO
 
+load_dotenv()
 basicConfig(level=INFO)
 log = getLogger()
 

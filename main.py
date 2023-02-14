@@ -41,11 +41,11 @@ def ctime(update,context):
 def wish():
     while True:
         current_time = datetime.datetime.now()
-        now = current_time.strftime("%H:%M")
+        now = current_time.strftime("%H:%M:%S")
         today = datetime.datetime.today().strftime("%y-%m-%d")
         CYEAR=today[:2]
         CDATE=today[-5:]
-        if now=='04:00':
+        if now=='01:00:01':
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             for _ in BDICT:

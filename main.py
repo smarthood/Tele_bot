@@ -46,6 +46,7 @@ def wish():
         CYEAR=today[:2]
         CDATE=today[-5:]
         if now=='01:00:01':
+            time.sleep(100)
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             for _ in BDICT:

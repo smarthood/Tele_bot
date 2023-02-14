@@ -41,12 +41,11 @@ def ctime(update,context):
 def wish():
     while True:
         current_time = datetime.datetime.now()
-        now = current_time.strftime("%H:%M:%S")
+        now = current_time.strftime("%H:%M")
         today = datetime.datetime.today().strftime("%y-%m-%d")
         CYEAR=today[:2]
         CDATE=today[-5:]
-        if now == "01:00:8":
-            time.sleep(100)
+        if now=='04:00':
             updater.bot.send_message(chat_id=1313787079,text="Good Morning  ☀️ ")
             updater.bot.send_message(chat_id=1313787079,text=f"Have a {random.choice(stwish)} day!")
             for _ in BDICT:
@@ -81,7 +80,7 @@ def main():
     "23-03-08":"Holi 🎨",
     "23-04-09":"Easter 🕯️",
     "23-11-10":"Diwali 🪔",
-    "23-01-26":"Independence Day🇮🇳",
+    "23-01-26":"Independence Day 🇮🇳 ",
     "23-08-15":"Republic Day 🇮🇳",
     "23-10-02":"Gandhi jeyanthi 🕊️",
     "23-04-22":"Ramzan 🕌",
